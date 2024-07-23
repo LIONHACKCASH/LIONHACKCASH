@@ -1,0 +1,120 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        text-shadow: 0 0 2px #ffb70f, 0 0 4px #ffb70f, 0 0 6px #ffb70f;
+    }
+    50% {
+        transform: scale(1.05);
+        text-shadow: 0 0 4px #ffb70f, 0 0 6px #ffb70f, 0 0 8px #ffb70f;
+    }
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: url('background.jpg') no-repeat center center fixed; /* Задний фон страницы */
+    background-size: cover; /* Масштабируем фон, чтобы он покрывал весь экран */
+}
+
+.container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.35); /* Полупрозрачный фон для контейнера */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.header {
+    margin-bottom: 20px;
+}
+
+.grid-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.grid-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1b2435; /* Заливка большого квадрата цветом маленьких квадратиков */
+    padding: 10px; /* Пространство между границей большого квадрата и маленькими квадратами */
+    border: 4px solid #374b67; /* Граница для большого квадрата */
+    border-radius: 10px; /* Закругленные углы для большого квадрата */
+}
+
+.row {
+    display: flex;
+}
+
+.cell {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #015daa; /* Цвет границы */
+    background-color: #0592e1; /* Цвет заливки */
+    margin: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 5px; /* Закругленные углы для маленьких квадратиков */
+}
+
+.trap {
+    background-image: url('star.png'); /* Используем изображение звезды для ловушки */
+    background-size: cover; /* Масштабирование звезды, чтобы она покрывала весь квадрат */
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 4px solid #015daa; /* Граница звезды того же цвета, что и граница клеток */
+    border-radius: 5px; /* Закругленные углы для ловушек */
+    animation: fadeIn 0.5s forwards; /* Анимация появления */
+    opacity: 0; /* Начальная прозрачность */
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#trapCount {
+    margin-bottom: 10px;
+}
+
+#trapRange {
+    margin-bottom: 10px;
+}
+
+button#signalButton {
+    background-color: #0592e1; /* Цвет заливки */
+    border: 2px solid #015daa; /* Цвет границы */
+    padding: 10px 20px;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px; /* Закругленные углы для кнопки */
+    cursor: pointer;
+}
+
+button#signalButton:hover {
+    background-color: #0478b2; /* Цвет при наведении */
+}
+
+.animated-title {
+    color: #ffb70f;
+    font-size: 48px;
+    animation: pulse 3s infinite; /* Более плавная пульсация */
+    font-family: 'Arial Black', sans-serif; /* Серьезный шрифт */
+}
